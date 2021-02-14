@@ -11,8 +11,8 @@ app = Flask(__name__)
 X = tf.placeholder(tf.float32, shape=[None, 4])
 Y = tf.placeholder(tf.float32, shape=[None, 1])
 
-W = tf.Variable(tf.random_normal([4, 1]), name="weight")
-b = tf.Variable(tf.random_normal([1]), name="bias")
+W = tf.Variable(tf.random.normal([4, 1]), name="weight")
+b = tf.Variable(tf.random.normal([1]), name="bias")
 
 # 가설을 설정합니다.
 hypothesis = tf.matmul(X, W) + b
@@ -22,7 +22,7 @@ saver = tf.train.Saver()
 model = tf.global_variables_initializer()
 
 # 세션 객체를 생성합니다.
-sess = tf.Session()
+sess = tf.compat.v1.Session()
 sess.run(model)
 
 # 저장된 모델을 세션에 적용합니다.
