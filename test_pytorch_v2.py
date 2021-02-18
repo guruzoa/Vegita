@@ -6,6 +6,7 @@ import sys
 
 import numpy as np
 from pandas.io.parsers import read_csv
+#pytorch version2
 
 class MultivariateLinearRegressionModel(nn.Module):
     def __init__(self):
